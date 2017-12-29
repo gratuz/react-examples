@@ -7,6 +7,7 @@ import thunkMiddleware from 'redux-thunk'
 
 import { createEpicMiddleware } from 'redux-observable';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs';
 
 
 
