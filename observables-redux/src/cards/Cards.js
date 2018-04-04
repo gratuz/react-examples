@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
 import {ActionFetchCards} from './CardData';
-import {Card} from '@scotia/canvas-react';
+import {Card} from '@shopify/polaris';
 
 
 
@@ -29,7 +29,6 @@ class _Cards extends Component{
     this.requestData = args.requestData;
   }
 
-  //just loading reddit data because the redux example was
   sourceUrl(){
       return `https://www.reddit.com/r/javascript.json`;
   }
@@ -49,7 +48,14 @@ class _Cards extends Component{
 
   renderItems(){
     return this.props.items.map((item,index) =>
-      <Card className="row" key={index}>{item.data.title}</Card>
+      <Card key={index} title={item.data.title}>
+        <Card.Section>
+          <p>{item.data.selftext}</p>
+        </Card.Section>
+        <Card.Section>
+          <p><a href={item.data.url} target="_blank">{item.data.permalink}</a></p>
+        </Card.Section>
+      </Card>
     );
   }
 

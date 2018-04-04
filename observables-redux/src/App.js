@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux'
 
-import '@scotia/canvas-dom/css/index.css';
-import { Header} from '@scotia/canvas-react';
+import '@shopify/polaris/styles.css';
 
 import { CreateCardDataStore} from './cards/CardData';
 import Cards from './cards/Cards';
@@ -17,7 +16,6 @@ class App extends Component {
     return (
       <Provider store={CreateCardDataStore()}>
         <div>
-          <Header />
           <div className="layout-row">
             <Cards />
           </div>
